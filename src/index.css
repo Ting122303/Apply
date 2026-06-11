@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Global ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #dce6f2;
+  color: #1e2530;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c8d2de; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a0aeba; }
+
+/* ========== Stage badge colors (Morandi) ========== */
+.stage-已投递   { @apply bg-[#dee4ed] text-[#4a5466]; }
+.stage-简历筛选 { @apply bg-[#e8e3d8] text-[#6b5f4a]; }
+.stage-笔试\/测评 { @apply bg-[#e4dcec] text-[#5d4d6e]; }
+.stage-面试中   { @apply bg-[#d6e0ee] text-[#3f5a7a]; }
+.stage-Offer    { @apply bg-[#d6e8dd] text-[#3d694e]; }
+.stage-已凉     { @apply bg-[#ead9da] text-[#7a4d4e]; }
