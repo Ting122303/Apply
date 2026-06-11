@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { useApps } from '../App';
 import { STAGE_ORDER } from '../lib/types';
 import type { Stage } from '../lib/types';
-import { daysAgo } from '../lib/storage';
 
 export default function List() {
   const { applications, deleteApp } = useApps();

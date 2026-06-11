@@ -1,11 +1,11 @@
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { useApps } from '../App';
-import { STAGE_ORDER, FUNNEL_STAGES, FUNNEL_COLORS, CHANNEL_COLORS, STAGE_ICONS } from '../lib/types';
+import { FUNNEL_STAGES, FUNNEL_COLORS, CHANNEL_COLORS } from '../lib/types';
 import type { Channel } from '../lib/types';
-import { daysAgo, isOverdue } from '../lib/storage';
+import { daysAgo } from '../lib/storage';
 
 export default function Dashboard() {
-  const { applications, deleteApp } = useApps();
+  const { applications } = useApps();
   const total = applications.length;
   const interviewing = applications.filter(a => a.stage === '面试中').length;
   const offers = applications.filter(a => a.stage === 'Offer').length;
@@ -19,7 +19,6 @@ export default function Dashboard() {
   const pieData = Object.entries(channelCounts).map(([name, value]) => ({ name, value }));
 
   // ── 漏斗数据 ──
-  const maxFunnel = Math.max(1, ...FUNNEL_STAGES.map(s => applications.filter(a => a.stage === s).length));
   const funnelData = FUNNEL_STAGES.map(stage => ({
     name: stage,
     count: applications.filter(a => a.stage === stage).length,
