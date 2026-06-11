@@ -10,7 +10,7 @@ seedIfEmpty();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Apply">
       <App />
     </BrowserRouter>
   </StrictMode>
